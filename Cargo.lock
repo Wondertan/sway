@@ -879,7 +879,7 @@ checksum = "212d0f5754cb6769937f4501cc0e67f4f4483c8d2c3e1e922ee9edbe4ab4c7c0"
 
 [[package]]
 name = "docstrings"
-version = "0.1.9"
+version = "0.2.0"
 dependencies = [
  "thiserror",
 ]
@@ -978,7 +978,7 @@ checksum = "3f9eec918d3f24069decb9af1554cad7c880e2da24a9afd88aca000531ab82c1"
 
 [[package]]
 name = "forc"
-version = "0.1.9"
+version = "0.2.0"
 dependencies = [
  "annotate-snippets",
  "anyhow",
@@ -991,7 +991,7 @@ dependencies = [
  "fuel-vm",
  "futures",
  "hex",
- "prettydiff",
+ "prettydiff 0.4.0",
  "reqwest",
  "semver 1.0.4",
  "serde",
@@ -1941,13 +1941,40 @@ checksum = "427c3892f9e783d91cc128285287e70a59e206ca452770ece88a76f7a3eddd72"
 
 [[package]]
 name = "parser"
-version = "0.1.9"
+version = "0.2.0"
 dependencies = [
  "ariadne",
  "chumsky",
  "generational-arena",
  "lazy_static 1.4.0",
 ]
+
+[[package]]
+name = "peg"
+version = "0.7.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "07c0b841ea54f523f7aa556956fbd293bcbe06f2e67d2eb732b7278aaf1d166a"
+dependencies = [
+ "peg-macros",
+ "peg-runtime",
+]
+
+[[package]]
+name = "peg-macros"
+version = "0.7.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b5aa52829b8decbef693af90202711348ab001456803ba2a98eb4ec8fb70844c"
+dependencies = [
+ "peg-runtime",
+ "proc-macro2 1.0.36",
+ "quote 1.0.14",
+]
+
+[[package]]
+name = "peg-runtime"
+version = "0.7.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c719dcf55f09a3a7e764c6649ab594c18a177e3599c467983cdf644bfc0a4088"
 
 [[package]]
 name = "percent-encoding"
@@ -2081,6 +2108,17 @@ dependencies = [
  "ansi_term 0.9.0",
  "prettytable-rs",
  "structopt 0.2.18",
+]
+
+[[package]]
+name = "prettydiff"
+version = "0.5.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fb5671a83709b2755fe5b776d4915701bf36ed2cd9575035502ec12818141d71"
+dependencies = [
+ "ansi_term 0.12.1",
+ "prettytable-rs",
+ "structopt 0.3.25",
 ]
 
 [[package]]
@@ -2870,7 +2908,7 @@ dependencies = [
 
 [[package]]
 name = "sway-core"
-version = "0.1.9"
+version = "0.2.0"
 dependencies = [
  "derivative",
  "either",
@@ -2882,10 +2920,12 @@ dependencies = [
  "pest",
  "pest_derive",
  "petgraph",
+ "prettydiff 0.5.1",
  "sha2",
  "smallvec",
  "source-span",
  "structopt 0.3.25",
+ "sway-ir",
  "sway-types",
  "thiserror",
  "uuid-b64",
@@ -2893,15 +2933,24 @@ dependencies = [
 
 [[package]]
 name = "sway-fmt"
-version = "0.1.9"
+version = "0.2.0"
 dependencies = [
  "ropey",
  "sway-core",
 ]
 
 [[package]]
+name = "sway-ir"
+version = "0.1.0"
+dependencies = [
+ "generational-arena",
+ "peg",
+ "prettydiff 0.5.1",
+]
+
+[[package]]
 name = "sway-server"
-version = "0.1.9"
+version = "0.2.0"
 dependencies = [
  "dashmap",
  "lspower",
@@ -2915,7 +2964,7 @@ dependencies = [
 
 [[package]]
 name = "sway-types"
-version = "0.1.9"
+version = "0.2.0"
 dependencies = [
  "fuel-asm",
  "fuel-tx",
@@ -2924,7 +2973,7 @@ dependencies = [
 
 [[package]]
 name = "sway-utils"
-version = "0.1.9"
+version = "0.2.0"
 
 [[package]]
 name = "syn"
@@ -3018,7 +3067,7 @@ dependencies = [
 
 [[package]]
 name = "test"
-version = "0.1.9"
+version = "0.2.0"
 dependencies = [
  "forc",
  "fuel-asm",

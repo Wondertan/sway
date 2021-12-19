@@ -132,7 +132,7 @@ pub(crate) fn convert_expression_to_asm(
                     warnings,
                     name.span().clone(),
                     Warning::ShadowingReservedRegister {
-                        reg_name: name.clone()
+                        reg_name: name.as_str().into()
                     }
                 );
 
